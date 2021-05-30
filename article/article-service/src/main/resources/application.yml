@@ -1,0 +1,23 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: article-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/superblog?useUnicode=true&useJDBCCompliantTimezoneShift=true&characterEncoding=utf8&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 60000
+      max-lifetime: 120000
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000

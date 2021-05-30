@@ -21,9 +21,14 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/auth/**  #断言，路径相匹配的进行路由
+
+        - id: article-service
+          uri: lb://article-service
+          predicates:
+            - Path=/article/**  #断言，路径相匹配的进行路由
 gateway:
   filter:
-    allowPaths:
+    allowPaths: #无需登录即可访问的接口
       - /user/register #注册
       - /auth/accredit #登录授权
       - /auth/verify #刷新token

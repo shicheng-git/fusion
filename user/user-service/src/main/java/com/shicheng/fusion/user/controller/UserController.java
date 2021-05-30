@@ -45,12 +45,6 @@ public class UserController {
         }
         ResponseUser user = userService.query(account, password);
         return ResponseEntity.status(HttpStatus.OK).body(user);
-//        if (user == null){
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("登录失败，请检查账号和密码");
-//        }else {
-//            return ResponseEntity.status(HttpStatus.OK).body(user);
-//        }
-
     }
 
 
