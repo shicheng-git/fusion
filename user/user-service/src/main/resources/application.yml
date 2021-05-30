@@ -1,0 +1,18 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/superblog?useUnicode=true&useJDBCCompliantTimezoneShift=true&characterEncoding=utf8&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 60000
+      max-lifetime: 120000
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848

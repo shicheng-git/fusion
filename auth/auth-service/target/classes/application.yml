@@ -1,0 +1,20 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: auth-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
+
+jwt:
+  secret: FD5@46&*(1iofFD@#$415$@#12(*1{f? #生成token的密文长度为32
+  expire: 28800 #token过期时间 8小时即28800s
